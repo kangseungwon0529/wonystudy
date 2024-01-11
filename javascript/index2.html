@@ -7,15 +7,28 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="alert-box" id="alert-box">
-        알림창
-        <button onclick="document.getElementById('alert-box').style.display='none';">닫기</button>
+    <div class="alert-box" id="id">
+        <p>아이디를 입력해주세요.</p>
+        <input type="text" id="idInput">
+        <label for="idInput"> 아이디 : </label>
+        <button onclick="OpenToggle('none','id')">닫기</button>
     </div>
-    <button onclick="document.getElementById('alert-box').style.display = 'block';">
-        버튼
+    <div class="alert-box" id="pw">
+        <p>password를 입력해주세요.</p>
+        <label for="pwInput"> password : </label>
+        <input type="text" id="pwInput">
+        <button onclick="OpenToggle('none','pw')">닫기</button>
+    </div>
+    <button onclick="OpenToggle('block','id')">
+        버튼1
+    </button>
+    <button onclick="OpenToggle('block','pw')">
+        버튼2
     </button>
     <script>
-       
+       function OpenToggle(p,what) {
+        document.getElementById(what).style.display = p;
+       }
     </script>
 </body>
 </html>
